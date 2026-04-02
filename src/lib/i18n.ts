@@ -7,13 +7,15 @@ export const en = {
     pricing: "Pricing",
     areas: "Areas",
     faq: "FAQ",
-    contact: "Contact"
-  },
-  hero: {
-    headline: "AYEX CAR WASH Premium Mobile Car Wash Service in Abu Dhabi",
-    subtext: "Convenience. Quality. Eco-Friendly.",
+    contact: "Contact",
     bookNow: "Book Now",
     contactUs: "Contact Us"
+  },
+  hero: {
+    // headline: "AYEX CAR WASH Premium Mobile Car Wash Service in Abu Dhabi",
+    // subtext: "Convenience. Quality. Eco-Friendly.",
+    // bookNow: "Book Now",
+    // contactUs: "Contact Us"
   },
   stats: {
     vehicles: "Vehicles Served",

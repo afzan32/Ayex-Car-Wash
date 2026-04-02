@@ -54,6 +54,14 @@ export default function FAQBooking() {
     }
   });
 
+  const scrollToBooking = () => {
+    document.getElementById("booking")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   const onSubmit = async (data: z.infer<typeof bookingSchema>) => {
     setIsPending(true);
     try {
@@ -110,7 +118,8 @@ Notes: ${data.notes || 'No additional notes'}
       
       {/* FAQ */}
       <div className="lg:w-5/12" id="faq">
-        <h2 className="text-3xl font-bold mb-8">{t.faq.title}</h2>
+        <h2 className="text-3xl font-bold mb-4">{t.faq.title}</h2>
+        
         <div className="space-y-4">
           {faqs.map((faq, idx) => (
             <div 

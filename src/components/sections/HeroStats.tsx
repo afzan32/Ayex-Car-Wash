@@ -44,7 +44,7 @@ export default function HeroStats() {
   ];
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center pt-20">
+    <section className="relative min-h-screen flex flex-col justify-between pt-12 lg:pt-14 pb-28">
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -64,8 +64,8 @@ export default function HeroStats() {
             transition={{ duration: 0.8 }}
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-              Abu Dhabi's #1 Choice
+              {/* <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              Abu Dhabi's #1 Choice */}
             </div>
             <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 text-foreground">
               {t.hero.headline}
@@ -75,7 +75,7 @@ export default function HeroStats() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
+              {/* <Button
                 size="lg"
                 className="rounded-full px-8 py-6 text-lg 
               bg-yellow-400 text-black 
@@ -87,8 +87,8 @@ export default function HeroStats() {
                 }
               >
                 {t.hero.bookNow} <ArrowIcon className="ms-2" size={20} />
-              </Button>
-              <Button
+              </Button> */}
+              {/* <Button
                 size="lg"
                 variant="outline"
                 className="rounded-full px-8 py-6 text-lg border-2 hover:bg-muted transition-all"
@@ -97,17 +97,17 @@ export default function HeroStats() {
                 }
               >
                 {t.hero.contactUs}
-              </Button>
+              </Button> */}
             </div>
           </motion.div>
         </div>
 
         {/* Stats Grid */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-10"
+          transition={{ duration: 0.8, delay: 0.35 }}
+          className="mt-104 pb-6 grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-10"
         >
           {stats.map((stat, idx) => (
             <div

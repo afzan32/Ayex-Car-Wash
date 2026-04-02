@@ -20,12 +20,18 @@ export default function Navbar() {
   const toggleLang = () => setLanguage(language === 'en' ? 'ar' : 'en');
   const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
+  const scrollToId = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   const links = [
     { name: t.nav.about, href: '#about' },
     { name: t.nav.services, href: '#services' },
     { name: t.nav.pricing, href: '#pricing' },
     { name: t.nav.areas, href: '#areas' },
     { name: t.nav.faq, href: '#faq' },
+    { name: t.nav.bookNow, href: '#faq' },
+    { name: t.nav.contact, href: '#contact' },
   ];
 
   return (
@@ -110,6 +116,26 @@ export default function Navbar() {
                   {link.name}
                 </a>
               ))}
+              <button
+                type="button"
+                onClick={() => {
+                  scrollToId('booking');
+                  setMobileMenuOpen(false);
+                }}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-muted"
+              >
+                {t.hero?.bookNow || 'Book Now'}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  scrollToId('contact');
+                  setMobileMenuOpen(false);
+                }}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-muted"
+              >
+                {t.hero?.contactUs || 'Contact Us'}
+              </button>
               <div className="flex items-center justify-between px-3 pt-4 border-t border-border">
                 <Button variant="outline" onClick={toggleLang}>
                   {language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
