@@ -109,14 +109,17 @@ export default function Navbar() {
           >
             <div className="px-4 pt-2 pb-6 flex flex-col gap-4">
               {mobileLinks.map((link) => (
-                <a 
-                  key={link.name} 
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-2 rounded-md text-base font-medium hover:bg-muted"
+                <button
+                  key={link.name}
+                  type="button"
+                  onClick={() => {
+                    scrollToId(link.href.substring(1));
+                    setMobileMenuOpen(false);
+                  }}
+                  className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-foreground/80 hover:text-primary hover:bg-muted transition-colors"
                 >
                   {link.name}
-                </a>
+                </button>
               ))}
               <button
                 type="button"
