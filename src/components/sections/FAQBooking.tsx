@@ -120,12 +120,12 @@ Notes: ${data.notes || 'No additional notes'}
       <div className="lg:w-5/12" id="faq">
         <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">{t.faq.title}</h2>
         <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
-          <Button size="sm" className="rounded-lg px-4 sm:px-5 py-2 text-sm" onClick={scrollToBooking}>
+          {/* <Button size="sm" className="rounded-lg px-4 sm:px-5 py-2 text-sm" onClick={scrollToBooking}>
             {t.hero?.bookNow || "Book Now"}
           </Button>
           <Button size="sm" variant="outline" className="rounded-lg px-4 sm:px-5 py-2 text-sm" onClick={scrollToContact}>
             {t.hero?.contactUs || "Contact Us"}
-          </Button>
+          </Button> */}
         </div>
         
         <div className="space-y-3 sm:space-y-4">

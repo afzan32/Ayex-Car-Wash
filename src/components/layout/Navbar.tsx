@@ -30,9 +30,11 @@ export default function Navbar() {
     { name: t.nav.pricing, href: '#pricing' },
     { name: t.nav.areas, href: '#areas' },
     { name: t.nav.faq, href: '#faq' },
-    { name: t.nav.bookNow, href: '#faq' },
+    { name: t.nav.bookNow, href: '#booking' },
     { name: t.nav.contact, href: '#contact' },
   ];
+
+  const mobileLinks = links.filter(link => link.name !== t.nav.bookNow && link.name !== t.nav.contact);
 
   return (
     <header 
@@ -106,7 +108,7 @@ export default function Navbar() {
             className="md:hidden bg-background border-b border-border overflow-hidden"
           >
             <div className="px-4 pt-2 pb-6 flex flex-col gap-4">
-              {links.map((link) => (
+              {mobileLinks.map((link) => (
                 <a 
                   key={link.name} 
                   href={link.href}
