@@ -5,25 +5,25 @@ export default function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer id="contact" className="bg-card border-t border-border pt-16 pb-8">
+    <footer id="contact" className="bg-card border-t border-border pt-12 sm:pt-16 pb-6 sm:pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
           
           {/* Brand */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground">
-                <Droplets size={20} />
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground">
+                <Droplets size={16} sm:size={20} />
               </div>
-              <span className="font-bold text-xl tracking-tight uppercase">AYEX CAR WASH<span className="text-primary">.</span></span>
+              <span className="font-bold text-lg sm:text-xl tracking-tight uppercase">AYEX CAR WASH<span className="text-primary">.</span></span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               {t.footer.tagline}
             </p>
-            <div className="flex items-center gap-4 pt-2">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Instagram size={20} /></a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Facebook size={20} /></a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin size={20} /></a>
+            <div className="flex items-center gap-3 sm:gap-4 pt-2">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Instagram size={18} sm:size={20} /></a>
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Facebook size={18} sm:size={20} /></a>
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin size={18} sm:size={20} /></a>
             </div>
           </div>
 
@@ -51,26 +51,26 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold mb-4">{t.nav.contact}</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-primary shrink-0 mt-0.5" />
-                <span>{t.footer.address}</span>
+            <h4 className="font-semibold mb-3 sm:mb-4">{t.nav.contact}</h4>
+            <ul className="space-y-2 sm:space-y-3 text-sm text-muted-foreground">
+              <li className="flex items-start gap-2 sm:gap-3">
+                <MapPin size={16} sm:size={18} className="text-primary shrink-0 mt-0.5" />
+                <span className="text-xs sm:text-sm">{t.footer.address}</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone size={18} className="text-primary shrink-0" />
-                <span dir="ltr">{t.footer.phone}</span>
+              <li className="flex items-center gap-2 sm:gap-3">
+                <Phone size={16} sm:size={18} className="text-primary shrink-0" />
+                <span dir="ltr" className="text-xs sm:text-sm">{t.footer.phone}</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail size={18} className="text-primary shrink-0" />
-                <span>{t.footer.email}</span>
+              <li className="flex items-center gap-2 sm:gap-3">
+                <Mail size={16} sm:size={18} className="text-primary shrink-0" />
+                <span className="text-xs sm:text-sm">{t.footer.email}</span>
               </li>
             </ul>
           </div>
 
         </div>
         
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+        <div className="pt-6 sm:pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-xs sm:text-sm text-muted-foreground">
           <p>{t.footer.rights}</p>
           
         </div>

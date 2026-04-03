@@ -44,7 +44,7 @@ export default function HeroStats() {
   ];
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-between pt-12 lg:pt-14 pb-28">
+    <section className="relative min-h-screen flex flex-col justify-between pt-8 sm:pt-12 lg:pt-14 pb-16 sm:pb-20 lg:pb-28">
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -67,10 +67,10 @@ export default function HeroStats() {
               {/* <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
               Abu Dhabi's #1 Choice */}
             </div>
-            <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 text-foreground">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 sm:mb-6 text-foreground">
               {t.hero.headline}
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl">
+            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-6 sm:mb-8 lg:mb-10 max-w-2xl">
               {t.hero.subtext}
             </p>
 
@@ -107,17 +107,17 @@ export default function HeroStats() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.35 }}
-          className="mt-104 pb-6 grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-10"
+          className="mt-40 sm:mt-32 lg:mt-104 pb-4 sm:pb-6 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-10"
         >
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="bg-card/50 backdrop-blur-sm border border-border/50 p-6 rounded-2xl shadow-xl shadow-black/5"
+              className="bg-card/50 backdrop-blur-sm border border-border/50 p-4 sm:p-6 rounded-2xl shadow-xl shadow-black/5"
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-1 sm:mb-2">
                 <Counter end={stat.num} suffix={stat.suffix} />
               </div>
-              <div className="text-sm md:text-base font-medium text-muted-foreground">
+              <div className="text-xs sm:text-sm md:text-base font-medium text-muted-foreground">
                 {stat.label}
               </div>
             </div>

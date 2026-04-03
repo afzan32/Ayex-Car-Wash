@@ -16,10 +16,10 @@ export default function AboutServices() {
   ];
 
   return (
-    <div className="py-16 space-y-20" id="about">
+    <div className="py-12 sm:py-16 space-y-12 sm:space-y-20" id="about">
       {/* About Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -29,13 +29,13 @@ export default function AboutServices() {
             <Badge variant="outline" className="px-3 py-1 text-sm border-primary/30 text-primary bg-primary/5">
               {t.about.badge}
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
               {t.about.title}
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
               {t.about.desc1}
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
               {t.about.desc2}
             </p>
             
@@ -65,7 +65,7 @@ export default function AboutServices() {
             />
             
             {/* Floating accent card */}
-            <div className="absolute -bottom-6 -start-6 z-20 bg-card border border-border p-6 rounded-xl shadow-xl max-w-[200px]">
+            <div className="absolute -bottom-4 sm:-bottom-6 -start-4 sm:-start-6 z-20 bg-card border border-border p-4 sm:p-6 rounded-xl shadow-xl max-w-[160px] sm:max-w-[200px]">
               <div className="flex items-center gap-4 mb-2">
                 <div className="flex -space-x-2 rtl:space-x-reverse">
                   {[1,2,3].map(i => (
@@ -82,14 +82,14 @@ export default function AboutServices() {
       </section>
 
       {/* Services Section */}
-      <section className="bg-muted/30 py-16 border-y border-border/50" id="services">
+      <section className="bg-muted/30 py-12 sm:py-16 border-y border-border/50" id="services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl font-bold mb-4">{t.services.title}</h2>
-            <p className="text-lg text-muted-foreground">{t.services.subtitle}</p>
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-black dark:text-white">{t.services.title}</h2>
+            <p className="text-base sm:text-lg text-black dark:text-gray-300">{t.services.subtitle}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, idx) => {
               const Icon = service.icon;
               return (
@@ -99,13 +99,13 @@ export default function AboutServices() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="group bg-card p-8 rounded-2xl border border-border shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Icon size={28} />
+                  className="group bg-green-500 dark:bg-gray-800 p-6 sm:p-8 rounded-2xl border border-green-200 dark:border-gray-700 shadow-sm hover:shadow-xl hover:border-green-300 dark:hover:border-gray-600 transition-all duration-300 hover:-translate-y-1"
+                  >
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-black flex items-center justify-center text-white mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <Icon size={24} sm:size={28} />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{service.desc}</p>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-black dark:text-white">{service.title}</h3>
+                  <p className="text-sm sm:text-base text-black dark:text-gray-300 leading-relaxed">{service.desc}</p>
                 </motion.div>
               )
             })}

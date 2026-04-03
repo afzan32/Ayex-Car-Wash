@@ -27,7 +27,7 @@ export const en = {
     badge: "Eco-Certified & Licensed",
     title: "The Shine That Lasts Forever",
     desc1: "Ayex Car Wash is Abu Dhabi's premier mobile vehicle detailing service, bringing unparalleled care directly to your doorstep.",
-    desc2: "We specialize in serving residential towers, commercial buildings, corporate fleets, and government clients with absolute professionalism. Our waterless and eco-friendly techniques ensure a pristine finish while protecting the environment.",
+    desc2: "We specialize in serving residential towers, commercial buildings, corporate fleets, and government clients with absolute professionalism. Our  and eco-friendly techniques ensure a pristine finish while protecting the environment.",
     features: ["Professional Staff", "Eco-Friendly", "On-Site Service"]
   },
   services: {

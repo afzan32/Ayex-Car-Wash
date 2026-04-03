@@ -114,13 +114,21 @@ Notes: ${data.notes || 'No additional notes'}
   };
 
   return (
-    <div className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-10">
+    <div className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8 sm:gap-10">
       
       {/* FAQ */}
       <div className="lg:w-5/12" id="faq">
-        <h2 className="text-3xl font-bold mb-4">{t.faq.title}</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">{t.faq.title}</h2>
+        <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
+          <Button size="sm" className="rounded-lg px-4 sm:px-5 py-2 text-sm" onClick={scrollToBooking}>
+            {t.hero?.bookNow || "Book Now"}
+          </Button>
+          <Button size="sm" variant="outline" className="rounded-lg px-4 sm:px-5 py-2 text-sm" onClick={scrollToContact}>
+            {t.hero?.contactUs || "Contact Us"}
+          </Button>
+        </div>
         
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, idx) => (
             <div 
               key={idx} 
@@ -128,15 +136,15 @@ Notes: ${data.notes || 'No additional notes'}
             >
               <button 
                 onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                className="flex items-center justify-between w-full p-5 text-start font-semibold focus:outline-none"
+                className="flex items-center justify-between w-full p-4 sm:p-5 text-start font-semibold focus:outline-none"
               >
-                <span>{faq.q}</span>
+                <span className="text-sm sm:text-base">{faq.q}</span>
                 <ChevronDown className={`shrink-0 transition-transform duration-200 ${openFaq === idx ? 'rotate-180 text-primary' : 'text-muted-foreground'}`} />
               </button>
               <div 
                 className={`overflow-hidden transition-all duration-300 ${openFaq === idx ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
               >
-                <p className="p-5 pt-0 text-muted-foreground leading-relaxed">
+                <p className="p-4 sm:p-5 pt-0 text-sm sm:text-base text-muted-foreground leading-relaxed">
                   {faq.a}
                 </p>
               </div>
@@ -147,15 +155,15 @@ Notes: ${data.notes || 'No additional notes'}
 
       {/* Booking Form */}
       <div className="lg:w-7/12" id="booking">
-        <div className="bg-card border border-border shadow-2xl rounded-3xl p-8 md:p-10 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+        <div className="bg-card border border-border shadow-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 sm:w-64 h-48 sm:h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
           
-          <h2 className="text-3xl font-bold mb-2 relative z-10">{t.booking.title}</h2>
-          <p className="text-muted-foreground mb-8 relative z-10">{t.booking.subtitle}</p>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-2 relative z-10">{t.booking.title}</h2>
+          <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 relative z-10">{t.booking.subtitle}</p>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 relative z-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6 relative z-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <FormField control={form.control} name="fullName" render={({ field }) => (
                   <FormItem><FormLabel>{t.booking.name}</FormLabel><FormControl><Input {...field} className="bg-background" /></FormControl><FormMessage /></FormItem>
                 )} />
@@ -164,7 +172,7 @@ Notes: ${data.notes || 'No additional notes'}
                 )} />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <FormField control={form.control} name="serviceType" render={({ field }) => (
                   <FormItem>
                     <FormLabel>{t.booking.service}</FormLabel>
@@ -188,7 +196,7 @@ Notes: ${data.notes || 'No additional notes'}
                 )} />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <FormField control={form.control} name="vehicles" render={({ field }) => (
                   <FormItem><FormLabel>{t.booking.vehicles}</FormLabel><FormControl><Input type="number" min="1" className="bg-background" {...field} /></FormControl><FormMessage /></FormItem>
                 )} />
@@ -201,8 +209,8 @@ Notes: ${data.notes || 'No additional notes'}
                 <FormItem><FormLabel>{t.booking.notes}</FormLabel><FormControl><Textarea rows={3} className="bg-background resize-none" {...field} /></FormControl><FormMessage /></FormItem>
               )} />
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button type="submit" size="lg" className="flex-1 text-lg py-6 rounded-xl" disabled={isPending}>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
+                <Button type="submit" size="lg" className="flex-1 text-base sm:text-lg py-4 sm:py-6 rounded-xl" disabled={isPending}>
                   {isPending ? "Processing..." : t.booking.submit}
                 </Button>
                 {/* <Button 
