@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useTheme } from '@/contexts/ThemeContext';
 import { Button } from '@/components/ui/button';
-import { Moon, Sun, Menu, X, Droplets, Download } from 'lucide-react';
+import { Menu, X, Droplets, Download } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
   const { language, setLanguage, t } = useLanguage();
-  const { theme, setTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -18,7 +16,6 @@ export default function Navbar() {
   }, []);
 
   const toggleLang = () => setLanguage(language === 'en' ? 'ar' : 'en');
-  const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
   const scrollToId = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -71,9 +68,6 @@ export default function Navbar() {
             <Button variant="ghost" size="icon" onClick={toggleLang} className="font-semibold">
               {language === 'en' ? 'AR' : 'EN'}
             </Button>
-            <Button variant="ghost" size="icon" onClick={toggleTheme}>
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-            </Button>
             <a
               href={`/AYEX_CAR_WASH_PROFILE.pdf`}
               download="AYEX_CAR_WASH_PROFILE.pdf"
@@ -81,16 +75,13 @@ export default function Navbar() {
             >
               <Button className="rounded-full shadow-md shadow-primary/20 gap-2">
                 <Download size={16} />
-                Download PDF
+                Company Profile
               </Button>
             </a>
           </div>
 
           {/* Mobile Menu Toggle */}
           <div className="md:hidden flex items-center gap-2">
-            <Button variant="ghost" size="icon" onClick={toggleTheme}>
-               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-            </Button>
             <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
@@ -129,7 +120,7 @@ export default function Navbar() {
                 }}
                 className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-muted"
               >
-                {t.hero?.bookNow || 'Book Now'}
+                {t.nav.bookNow}
               </button>
               <button
                 type="button"
@@ -139,7 +130,7 @@ export default function Navbar() {
                 }}
                 className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-muted"
               >
-                {t.hero?.contactUs || 'Contact Us'}
+                {t.nav.contact}
               </button>
               <div className="flex items-center justify-between px-3 pt-4 border-t border-border">
                 <Button variant="outline" onClick={toggleLang}>

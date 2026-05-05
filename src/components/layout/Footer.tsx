@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="space-y-3 sm:space-y-4">
             <div className="flex items-center gap-2">
               <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground">
-                <Droplets size={16} sm:size={20} />
+                <Droplets className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <span className="font-bold text-lg sm:text-xl tracking-tight uppercase">AYEX CAR WASH<span className="text-primary">.</span></span>
             </div>
@@ -21,9 +21,9 @@ export default function Footer() {
               {t.footer.tagline}
             </p>
             <div className="flex items-center gap-3 sm:gap-4 pt-2">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Instagram size={18} sm:size={20} /></a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Facebook size={18} sm:size={20} /></a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin size={18} sm:size={20} /></a>
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Instagram className="w-4 h-4 sm:w-5 sm:h-5" /></a>
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Facebook className="w-4 h-4 sm:w-5 sm:h-5" /></a>
+              <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin className="w-4 h-4 sm:w-5 sm:h-5" /></a>
             </div>
           </div>
 
@@ -54,15 +54,15 @@ export default function Footer() {
             <h4 className="font-semibold mb-3 sm:mb-4">{t.nav.contact}</h4>
             <ul className="space-y-2 sm:space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2 sm:gap-3">
-                <MapPin size={16} sm:size={18} className="text-primary shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0 mt-0.5" />
                 <span className="text-xs sm:text-sm">{t.footer.address}</span>
               </li>
               <li className="flex items-center gap-2 sm:gap-3">
-                <Phone size={16} sm:size={18} className="text-primary shrink-0" />
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
                 <span dir="ltr" className="text-xs sm:text-sm">{t.footer.phone}</span>
               </li>
               <li className="flex items-center gap-2 sm:gap-3">
-                <Mail size={16} sm:size={18} className="text-primary shrink-0" />
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
                 <span className="text-xs sm:text-sm">{t.footer.email}</span>
               </li>
             </ul>

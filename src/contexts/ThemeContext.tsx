@@ -10,8 +10,8 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  // Default to dark mode for the premium luxury feel
-  const [theme, setTheme] = useState<Theme>("dark");
+  // Force light mode only
+  const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
     const root = window.document.documentElement;

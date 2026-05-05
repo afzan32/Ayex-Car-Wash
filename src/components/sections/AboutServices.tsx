@@ -102,7 +102,7 @@ export default function AboutServices() {
                   className="group bg-green-500 dark:bg-gray-800 p-6 sm:p-8 rounded-2xl border border-green-200 dark:border-gray-700 shadow-sm hover:shadow-xl hover:border-green-300 dark:hover:border-gray-600 transition-all duration-300 hover:-translate-y-1"
                   >
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-black flex items-center justify-center text-white mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Icon size={24} sm:size={28} />
+                    <Icon className="w-6 h-6 sm:w-7 sm:h-7" />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-black dark:text-white">{service.title}</h3>
                   <p className="text-sm sm:text-base text-black dark:text-gray-300 leading-relaxed">{service.desc}</p>

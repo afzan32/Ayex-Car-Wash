@@ -33,7 +33,7 @@ export default function PricingContracts() {
                 <ul className="space-y-3 sm:space-y-4 pt-2">
                   {t.pricing.silver.features.map((f, i) => (
                     <li key={i} className="flex items-start gap-2 sm:gap-3 text-muted-foreground">
-                      <Check size={18} sm:size={20} className="text-primary shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0 mt-0.5" />
                       <span className="text-sm sm:text-base">{f}</span>
                     </li>
                   ))}
@@ -62,7 +62,7 @@ export default function PricingContracts() {
                 <ul className="space-y-3 sm:space-y-4 pt-2">
                   {t.pricing.gold.features.map((f, i) => (
                     <li key={i} className="flex items-start gap-2 sm:gap-3">
-                      <Check size={18} sm:size={20} className="text-primary shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0 mt-0.5" />
                       <span className="font-medium text-sm sm:text-base">{f}</span>
                     </li>
                   ))}
@@ -86,7 +86,7 @@ export default function PricingContracts() {
                 <ul className="space-y-3 sm:space-y-4 pt-2">
                   {t.pricing.platinum.features.map((f, i) => (
                     <li key={i} className="flex items-start gap-2 sm:gap-3 text-muted-foreground">
-                      <Check size={18} sm:size={20} className="text-primary shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0 mt-0.5" />
                       <span className="text-sm sm:text-base">{f}</span>
                     </li>
                   ))}

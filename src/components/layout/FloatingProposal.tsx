@@ -1,29 +1,12 @@
-import { useState, useEffect } from 'react';
 import { FileText } from 'lucide-react';
 
 export default function FloatingProposal() {
-  const [isVisible, setIsVisible] = useState(false);
-
   const scrollToBooking = () => {
     const bookingSection = document.getElementById('booking');
     if (bookingSection) {
       bookingSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Show button when scrolled past half the viewport height (past hero section)
-      setIsVisible(window.scrollY > window.innerHeight * 0.5);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial position
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  if (!isVisible) return null;
 
   return (
     <button
